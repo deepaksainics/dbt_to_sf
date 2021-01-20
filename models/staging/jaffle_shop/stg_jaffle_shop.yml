@@ -29,5 +29,5 @@ models:
                   - shipped
                   - returned
                   - placed
-                  - return_pending_dum
+                  - return_pending
                 
