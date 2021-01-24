@@ -39,3 +39,7 @@ models:
       # Applies to all files under models/example/
     staging:
       materialized: view
+
+snapshots:
+  jaffle_shop:
+    +target_schema: dbt_dsaini
