@@ -1,6 +1,8 @@
 {{ config(
     materialized = 'incremental',
-    unique_key = 'customer_id'
+    unique_key = 'customer_id',
+    pre_hook="delete from {{this}} where customer_id in (select customer_id from {{this}} minus select customer_id from {{source('dbt_dsaini', 'dim_customers')}})"
+
 ) }}
 with dim_customer_hist as (
     select * from {{ source('dbt_dsaini', 'dim_customers') }}
