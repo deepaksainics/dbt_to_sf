@@ -43,6 +43,6 @@ models:
       +database: DEMO_DB
       +schema: STAGING 
 
-snapshots:
-  jaffle_shop:
-    +target_schema: dbt_dsaini
+#snapshots:
+    ##+target_database: generate_database_name(DEMO_DB)
+    ##+target_schema: generate_schema_name(MART)    
