@@ -35,9 +35,13 @@ models:
     marts:
         core:
           materialized: table
+          +database: DEMO_DB
+          +schema: MART 
       # Applies to all files under models/example/
     staging:
       materialized: view
+      +database: DEMO_DB
+      +schema: STAGING 
 
 snapshots:
   jaffle_shop:
