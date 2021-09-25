@@ -1,5 +1,6 @@
 {{ config (
     materialized="table",
+    transient=false,
     schema='MART'
 )}}
 
