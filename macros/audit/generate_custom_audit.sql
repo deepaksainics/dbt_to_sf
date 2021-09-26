@@ -4,7 +4,7 @@ run start time, run end time, count of rows, event full refresh flag and run dur
 #}
 
 {% macro generate_custom_audit(model_name) %}
-{%- set audit_schema=logging.generate_schema_name('DBT_AUDIT',none) -%}
+{%- set audit_schema=logging.get_audit_schema() -%}
 
 {% do log(audit_schema, true)%}
 
