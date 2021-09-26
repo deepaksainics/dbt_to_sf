@@ -1,4 +1,3 @@
-
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
@@ -35,11 +34,15 @@ models:
   jaffle_shop:
     marts:
         core:
-          materialized: table
+          #materialized: table
+          +database: DEMO_DB
+          +schema: MART 
       # Applies to all files under models/example/
     staging:
       materialized: view
+      +database: DEMO_DB
+      +schema: STAGING 
 
-snapshots:
-  jaffle_shop:
-    +target_schema: dbt_dsaini
+#snapshots:
+    ##+target_database: generate_database_name(DEMO_DB)
+    ##+target_schema: generate_schema_name(MART)    
