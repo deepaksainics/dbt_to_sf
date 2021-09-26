@@ -8,7 +8,11 @@
     ) 
 }}
 with dim_customer_hist as (
-    select * from {{ ref('dim_customers') }}
+    select customer_id,first_name,
+        last_name,first_order_date,
+        most_recent_order_date, number_of_orders,
+        Test_column , '{{invocation_id}}' 	        		AS 	 			dbt_invocation_id 
+        from {{ ref('dim_customers') }}
       {% if is_incremental() %}
       where MOST_RECENT_ORDER_DATE >= (select max(MOST_RECENT_ORDER_DATE) from {{ this }})
       and MOST_RECENT_ORDER_DATE is not null

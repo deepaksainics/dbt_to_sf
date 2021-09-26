@@ -61,7 +61,7 @@ DURATION_IN_MIN
       (select event_timestamp FROM {{database}}.{{audit_schema}}."DBT_AUDIT_LOG"
        WHERE event_model='{{this.name}}' AND invocation_id='{{invocation_id}}' and event_name='model deployment completed' 
        and event_timestamp IS NOT NULL) as model_end_timestamp ,
-      (select count(*) from {{model_name}} where INVOCATION_ID='{{invocation_id}}') as row_count,
+      (select count(*) from {{model_name}} where DBT_INVOCATION_ID='{{invocation_id}}') as row_count,
       (select event_is_full_refresh FROM {{database}}.{{audit_schema}}."DBT_AUDIT_LOG"
        WHERE event_model='{{this.name}}' AND invocation_id='{{invocation_id}}' 
        and event_name='model deployment completed' and event_timestamp IS NOT NULL) as event_is_full_refresh)
