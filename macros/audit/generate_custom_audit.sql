@@ -3,7 +3,7 @@ run start time, run end time, count of rows, event full refresh flag and run dur
 - This macro can be called in a post hook of each model which is using invocation id
 #}
 
---{% macro generate_custom_audit(model_name) %}
+{% macro generate_custom_audit(model_name) %}
 {%- set audit_schema=logging.generate_schema_name('DBT_AUDIT',none) -%}
 
 {% do log(audit_schema, true)%}
