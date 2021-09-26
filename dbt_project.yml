@@ -34,7 +34,7 @@ models:
   jaffle_shop:
     marts:
         core:
-          materialized: table
+          #materialized: table
           +database: DEMO_DB
           +schema: MART 
       # Applies to all files under models/example/
