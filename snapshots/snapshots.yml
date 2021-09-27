@@ -1,0 +1,6 @@
+version: 2
+
+snapshot:
+    - name: orders_hist
+      description: "This model implements SCD TYPE2 for order data"
+ 

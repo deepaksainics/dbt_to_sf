@@ -1,0 +1,15 @@
+version: 2
+
+models:
+
+    - name: dim_customers
+      description: "Customer dimension data for Jaffel shop.This table is created by joining the tables customers and orders table."
+ 
+    - name: dim_customers_hist
+      description: "Customer dimension history data for Jaffel shop.This table is created by loading data incrementally from customer dimension data."
+    
+    - name: fct_orders
+      description: "Order data for Jaffel shop.This table is created by joining orders  data and the payment data from Stripe"
+    
+    - name: int_orders__pivoted
+      description: "Amount paid by different payment method for each orders"
