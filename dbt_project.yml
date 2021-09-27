@@ -30,6 +30,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # In this example config, we tell dbt to build all models in the example/ directory
 # as tables. These settings can be overridden in the individual model files
 # using the `{{ config(...) }}` macro.
+
+vars:
+    # dbt run --vars '{"dapl_raw_db": "DAPL_RAW_PRD_DB"}'
+    var_raw_prd: RAW_PRD
+    var_raw_dev: RAW_DEV
+
 models:
   jaffle_shop:
     marts:

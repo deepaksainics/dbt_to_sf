@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: jaffle_shop
     description: A replica of the postgres database
-    database: raw
+    database: '{{ var("var_raw_prd") }}'
     tables:
       - name: orders
         loaded_at_field: _etl_loaded_at
