@@ -35,6 +35,7 @@ vars:
     # dbt run --vars '{"dapl_raw_db": "DAPL_RAW_PRD_DB"}'
     var_raw_prd: RAW_PRD
     var_raw_dev: RAW_DEV
+    var_raw_qas: RAW_QAS
 
 models:
   jaffle_shop:
