@@ -1,5 +1,5 @@
 {{ config(
-	tags=["persisted"],
+	tags=["persisted"], 
     materialized = 'incremental',
 	transient=false,
     unique_key = 'customer_id',
